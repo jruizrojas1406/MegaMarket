@@ -10,6 +10,10 @@ namespace Cibertec.MegaMarket.BL.BC
 {
     public class CargoBC
     {
+        /// <summary>
+        /// Listar Cargos
+        /// </summary>
+        /// <returns></returns>
         public List<Cargo> ListarCargo()
         {
             return new CargoDALC().ListarCargo().ToList();
