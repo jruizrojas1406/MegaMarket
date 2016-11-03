@@ -11,7 +11,7 @@ namespace Cibertec.MegaMarket.BL.BC
     public class CargoBC
     {
         /// <summary>
-        /// Listar Cargos
+        /// Listado de cargos
         /// </summary>
         /// <returns></returns>        
         public List<Cargo> ListarCargo()
