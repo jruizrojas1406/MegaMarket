@@ -13,7 +13,7 @@ namespace Cibertec.MegaMarket.BL.BC
         /// <summary>
         /// Listar Cargos
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns>        
         public List<Cargo> ListarCargo()
         {
             return new CargoDALC().ListarCargo().ToList();
