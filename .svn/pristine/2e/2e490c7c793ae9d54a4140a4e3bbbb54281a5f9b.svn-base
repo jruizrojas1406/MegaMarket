@@ -1,0 +1,30 @@
+﻿<Window x:Class="Cibertec.MegaMarket.UI.App.Form.FrmLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Autentificación" 
+        Height="264" 
+        Width="400"
+        Icon="/Megamarket.png"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Background="AliceBlue">
+        <Label Content="Usuario:" HorizontalAlignment="Left" Margin="23,69,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="23,116,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnIngresar" HorizontalAlignment="Left" Margin="266,187,0,0" VerticalAlignment="Top" Width="98" Height="28" Style="{StaticResource ButtonFormulario}" Click="btnIngresar_Click">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ingresar" Foreground="White" Padding="0,1,0,0" FontWeight="Bold"/>
+                <Image Source="../Images/Next.png" Width="16" Height="16" Margin="3"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnCancelar" HorizontalAlignment="Left" Margin="147,187,0,0" VerticalAlignment="Top" Width="104" Height="28" Style="{StaticResource ButtonFormulario}" Click="btnCancelar_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Images/Cancel.png" Width="16" Height="16" Margin="2"/>
+                <TextBlock Text="Cancelar" Foreground="White" Padding="0,1,0,0" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <CheckBox Content="Recordar Datos" HorizontalAlignment="Left" Margin="100,155,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNombreUsuario"  HorizontalAlignment="Left" Margin="100,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="100,115,0,0" VerticalAlignment="Top" Width="264"/>
+    </Grid>
+</Window>

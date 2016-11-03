@@ -1,0 +1,17 @@
+﻿<Application x:Class="Cibertec.MegaMarket.UI.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Cibertec.MegaMarket.UI.App"
+             StartupUri="/Form/FrmLogin.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/Control/ControlColors.xaml" />
+                <ResourceDictionary Source="/Style/Control/StyleTexBox.xaml"/>
+                <ResourceDictionary Source="/Style/Control/StyleDataGrid.xaml"/>
+                <ResourceDictionary Source="/Style/Control/StyleScrollBar.xaml"/>
+                <ResourceDictionary Source="/Style/Control/StyleButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

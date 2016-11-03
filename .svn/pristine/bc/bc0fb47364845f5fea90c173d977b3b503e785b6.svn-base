@@ -1,0 +1,91 @@
+﻿<Window x:Class="Cibertec.MegaMarket.UI.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MegaMarket"
+        MinHeight="600"
+        MinWidth="800"  
+        Icon="Megamarket.png"
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Maximized">
+
+    <Window.InputBindings>
+        <KeyBinding  Command="{Binding keyProductos}" Key="F1"/>
+        <KeyBinding Command="{Binding keyClientes}" Key="F2"/>
+        <KeyBinding Command="{Binding keyVentas}" Key="F3"/>
+    </Window.InputBindings>
+
+    <Grid>
+        <Grid Background="#fff">
+            <DockPanel>
+                <!--Menuk-->
+                <Menu DockPanel.Dock="Top" Background="#4D4D4D">
+                    <MenuItem Header="_File" Background="#4D4D4D" Foreground="#000">
+                        <MenuItem Header="_Exit" />
+                    </MenuItem>
+                    <MenuItem Header="_Opciones" Background="#4D4D4D" Foreground="#000">
+                        <MenuItem Header="_Producto" Background="AliceBlue">
+                            <MenuItem.Icon>
+                                <Image Source="/Images/Producto.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Ventas" Background="AliceBlue">
+                            <MenuItem.Icon>
+                                <Image Source="/Images/ConsultarVentas.png" Width="16" Height="16" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+                <!--/Menu-->
+
+                <!--Botonera-->
+                <Grid DockPanel.Dock="Left" Width="106" FlowDirection="LeftToRight" Background="#676767">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnProducto" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="2,1.2" Height="68" 
+                            Style="{StaticResource ctlBotonera}" Click="btnProducto_Click">
+                        <StackPanel>
+                            <Image Source="/Images/producto.png" Width="35" Height="35"/>
+                            <TextBlock FontFamily="Arial Narrow" FontStyle="Normal" FontSize="13" Foreground="White" TextAlignment="Center">Productos - F1</TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="btnCliente" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="2,1.2" Height="68" 
+                            Style="{StaticResource ctlBotonera}" Command="{Binding keyClientes}" Click="btnCliente_Click">
+                        <StackPanel>
+                            <Image Source="/Images/cliente.png" Width="35" Height="35"/>
+                            <TextBlock FontFamily="Arial Narrow" FontStyle="Normal" FontSize="13" Foreground="White" TextAlignment="Center">Clientes - F2</TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="btnVentas" HorizontalAlignment="Left" Margin="0,148,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="2,1.2" Height="68" 
+                            Style="{StaticResource ctlBotonera}" Command="{Binding keyVentas}" Click="btnVentas_Click">
+                        <StackPanel>
+                            <Image Source="/Images/ventas.png" Width="35" Height="35"/>
+                            <TextBlock FontFamily="Arial Narrow" FontStyle="Normal" FontSize="13" Foreground="White" TextAlignment="Center">Ventas - F3</TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="btnConsultarVentas" HorizontalAlignment="Left" Margin="0,211,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="2,1.2" Height="82" Style="{StaticResource ctlBotonera}">
+                        <StackPanel>
+                            <Image Source="/Images/ConsultarVentas.png" Width="35" Height="35"/>
+                            <TextBlock FontFamily="Arial Narrow" FontStyle="Normal" FontSize="13" Foreground="White" TextAlignment="Center">Consultar Ventas</TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="btnSalir" HorizontalAlignment="Left" Margin="0,286,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="2,1.2" Height="77" Style="{StaticResource ctlBotonera}" Click="btnSalir_Click">
+                        <StackPanel>
+                            <Image Source="/Images/salir.png" Width="35" Height="35"/>
+                            <TextBlock FontFamily="Arial Narrow" FontStyle="Normal" FontSize="13" Foreground="White" TextAlignment="Center">Salir</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+
+                <Grid MinHeight="550" MinWidth="630" VerticalAlignment="Top" DockPanel.Dock="Right" Margin="0,-2,0,-62"/>
+                <!--Botonera-->
+            </DockPanel>
+            <Label x:Name="lblTUsuario" Content="Usuario:" HorizontalAlignment="Left" Margin="211,110,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblUsuario" Content="" HorizontalAlignment="Left" Margin="287,110,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>
