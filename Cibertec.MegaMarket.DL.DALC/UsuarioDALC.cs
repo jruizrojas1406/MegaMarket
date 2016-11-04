@@ -5,16 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Cibertec.MegaMarket.DL.DALC
 {
     public class UsuarioDALC
     {
-        public Usuario AutentificarUsuario(Usuario usuario)        {
-            
+        public Usuario AutentificarUsuario(Usuario usuario)
+        {
             var bd = new MegaMarketEntities();
-            Usuario user = bd.Usuarios.FirstOrDefault(x => x.Login == usuario.Login
-                && x.Password == usuario.Password);
+
+            Usuario user = bd.Usuarios
+                .Include(x => x.Empleado)
+                .FirstOrDefault(x => x.Login == usuario.Login && x.Password == usuario.Password);
             return user;
         }
     }

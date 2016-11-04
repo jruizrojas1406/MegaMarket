@@ -36,41 +36,40 @@ namespace Cibertec.MegaMarket.UI.WebApp.Helpers
             return UserID;
         }
 
-        public static string GetIdppiCodigo()
+        public static string GetFullNameUser()
         {
-            string IdppiCodigo = "";
+            string FullNameUser = string.Empty;
             if (HttpContext.Current.User != null && HttpContext.Current.User.Identity is FormsIdentity)
             {
                 FormsAuthenticationTicket ticket = ((FormsIdentity)HttpContext.Current.User.Identity).Ticket;
                 if (ticket != null)
                 {
-                    IdppiCodigo = (string)ticket.UserData.Split('|')[1];
+                    FullNameUser = (string)ticket.UserData.Split('|')[1];
                 }
             }
-            return IdppiCodigo;
+            return FullNameUser;
         }
 
         /// <summary>
         /// Almacena datos del Usuario  Logueado
         /// </summary>
-        /// <param name="UserName">string</param>
-        /// <param name="UsuarioNombres">string</param>
-        public static void AddUserToSession(string UserID, string UsuarioNombres)
+        public static void AddUserToSession(string UserName, bool Estado, string Data)
         {
-            HttpCookie cookie = FormsAuthentication.GetAuthCookie("userAccount", false);
+            HttpCookie cookie = FormsAuthentication.GetAuthCookie(UserName, Estado);
             FormsAuthenticationTicket ft = FormsAuthentication.Decrypt(cookie.Value);
             FormsAuthenticationTicket newFt =
                 new FormsAuthenticationTicket(
                     ft.Version,
-                    UsuarioNombres,
+                    UserName,
                     ft.IssueDate,
                     ft.Expiration,
                     ft.IsPersistent,
-                    UserID);
+                    Data);
 
             string encryptedValue = FormsAuthentication.Encrypt(newFt);
             cookie.Value = encryptedValue;
             HttpContext.Current.Response.Cookies.Add(cookie);
+
         }
     }
 }

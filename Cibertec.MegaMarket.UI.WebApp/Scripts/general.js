@@ -1,4 +1,4 @@
-﻿window.Ingemmet = window.Ingemmet || {};
+﻿window.MegaMarket = window.MegaMarket || {};
 
 (function ($) {
     var proxy = $.fn.serializeArray;
@@ -47,9 +47,26 @@
         return o;
     };
 
-    Ingemmet.funciones = function (form) {
+    MegaMarket.AjaxProcessing = function (form) {
         this.form = form;
-        this.AjaxOperacion = function (callback) {
+
+        this.FormCollection = function (callback) {
+            $.ajax({
+                type: "POST",
+                url: this.form.action,
+                data: $(this.form).serializeFormJSON(),
+                dataType: "json",
+                success: function (res) {
+                    callback(varData = (typeof res) == 'string' ? eval('(' + res + ')') : res);
+                },
+                error: function () {
+                    var res = { Estado: 2 };
+                    eFlexis.dialog.Message(res);
+                }
+            });
+        }
+
+        this.FormEntity = function (callback) {
             $.ajax({
                 type: "POST",
                 url: this.form.action,
@@ -67,17 +84,17 @@
         }
     }
 
-    Ingemmet.showModalPartialView = function (modal, url) {
-        Ingemmet[modal].load(url, function () {
+    MegaMarket.showModalPartialView = function (modal, url) {
+        MegaMarket[modal].load(url, function () {
 
         }).dialog('open');
 
-        Ingemmet[modal].dialog('widget').position({
+        MegaMarket[modal].dialog('widget').position({
             my: "center", at: "center", of: window
         });
     }
 
-    Ingemmet.formatDataTableData = function (aoData) {
+    MegaMarket.formatDataTableData = function (aoData) {
         var r = {};
         var x;
         for (x in aoData) {

@@ -1,7 +1,7 @@
 ﻿<li>
     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         @Html.Partial("_LoginImagePartial")  
-        @User.Identity.Name
+        @ViewBag.FullNameUser 
         <span class=" fa fa-angle-down"></span>
     </a>
     <ul class="dropdown-menu dropdown-usermenu pull-right">

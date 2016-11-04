@@ -25,8 +25,8 @@
                 .removeClass("alert alert-danger")
                 .text("");
 
-            var oAccount= new Ingemmet.funciones(form);
-            oAccount.AjaxOperacion(function (output) {
+            var oAccount = new MegaMarket.AjaxProcessing(form, true);
+            oAccount.FormCollection(function (output) {
                 console.log("output", output);
                 if (varData.Estado == 0) {
                     $(".mensaje-error")

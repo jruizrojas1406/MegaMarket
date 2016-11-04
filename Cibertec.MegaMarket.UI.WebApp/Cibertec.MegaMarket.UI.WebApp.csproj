@@ -163,13 +163,84 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AppSettings.cs" />
+    <Compile Include="Helpers\Encriptacion.cs" />
     <Compile Include="Helpers\SessionHelper.cs" />
+    <Compile Include="Models\Retorno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables\base.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\iCheck\all.css" />
+    <Content Include="Content\iCheck\flat\aero%402x.png" />
+    <Content Include="Content\iCheck\flat\aero.css" />
+    <Content Include="Content\iCheck\flat\aero.png" />
+    <Content Include="Content\iCheck\flat\blue%402x.png" />
+    <Content Include="Content\iCheck\flat\blue.css" />
+    <Content Include="Content\iCheck\flat\blue.png" />
+    <Content Include="Content\iCheck\flat\flat%402x.png" />
+    <Content Include="Content\iCheck\flat\flat.css" />
+    <Content Include="Content\iCheck\flat\flat.png" />
+    <Content Include="Content\iCheck\flat\green%402x.png" />
+    <Content Include="Content\iCheck\flat\green.css" />
+    <Content Include="Content\iCheck\flat\green.png" />
+    <Content Include="Content\iCheck\flat\grey%402x.png" />
+    <Content Include="Content\iCheck\flat\grey.css" />
+    <Content Include="Content\iCheck\flat\grey.png" />
+    <Content Include="Content\iCheck\flat\orange%402x.png" />
+    <Content Include="Content\iCheck\flat\orange.css" />
+    <Content Include="Content\iCheck\flat\orange.png" />
+    <Content Include="Content\iCheck\flat\pink%402x.png" />
+    <Content Include="Content\iCheck\flat\pink.css" />
+    <Content Include="Content\iCheck\flat\pink.png" />
+    <Content Include="Content\iCheck\flat\purple%402x.png" />
+    <Content Include="Content\iCheck\flat\purple.css" />
+    <Content Include="Content\iCheck\flat\purple.png" />
+    <Content Include="Content\iCheck\flat\red%402x.png" />
+    <Content Include="Content\iCheck\flat\red.css" />
+    <Content Include="Content\iCheck\flat\red.png" />
+    <Content Include="Content\iCheck\flat\yellow%402x.png" />
+    <Content Include="Content\iCheck\flat\yellow.css" />
+    <Content Include="Content\iCheck\flat\yellow.png" />
+    <Content Include="Content\iCheck\flat\_all.css" />
+    <Content Include="Content\iCheck\line\aero.css" />
+    <Content Include="Content\iCheck\line\blue.css" />
+    <Content Include="Content\iCheck\line\green.css" />
+    <Content Include="Content\iCheck\line\grey.css" />
+    <Content Include="Content\iCheck\line\line%402x.png" />
+    <Content Include="Content\iCheck\line\line.css" />
+    <Content Include="Content\iCheck\line\line.png" />
+    <Content Include="Content\iCheck\line\orange.css" />
+    <Content Include="Content\iCheck\line\pink.css" />
+    <Content Include="Content\iCheck\line\purple.css" />
+    <Content Include="Content\iCheck\line\red.css" />
+    <Content Include="Content\iCheck\line\yellow.css" />
+    <Content Include="Content\iCheck\line\_all.css" />
+    <Content Include="Content\iconos\favicon.ico" />
+    <Content Include="Content\iconos\MegaMarket.png" />
+    <Content Include="Content\images\LogoMegaMarket.png" />
+    <Content Include="Content\images\logo_white.png" />
+    <Content Include="Content\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\images\userdefault.jpg" />
     <Content Include="Content\jquery-ui-1.10.0.custom.css" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\Site.css" />
@@ -206,6 +277,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Site.js" />
+    <Content Include="Scripts\Views\Account.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -222,19 +294,11 @@
     <Content Include="Views\Shared\_LoginImagePartial.cshtml" />
     <Content Include="Views\Shared\_LoginMenuPartial.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Account\ListarCuentas.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Perfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\DataTables\" />
-    <Folder Include="Content\iCheck\" />
-    <Folder Include="Content\iconos\" />
-    <Folder Include="Content\images\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\DataTables\" />
-    <Folder Include="Scripts\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -254,6 +318,9 @@
       <Project>{ea5d5f54-20d4-4c64-828b-7615c801840d}</Project>
       <Name>Cibertec.MegaMarket.BL.BE</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -13,7 +13,7 @@ namespace Cibertec.MegaMarket.UI.WebApp
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.IgnoreList.Clear();
-            ///////
+          
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-{version}.js"));
 
