@@ -26,7 +26,7 @@ namespace Cibertec.MegaMarket.UI.WebApp.Controllers
         // GET: /Account/Login/<OBJECT>
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Login(FormCollection FrmUsuario)
+        public JsonResult Login(FormCollection FrmUsuario)
         {
             Usuario usuario = new Usuario();
             Retorno retorno = new Retorno();
@@ -51,7 +51,7 @@ namespace Cibertec.MegaMarket.UI.WebApp.Controllers
                 retorno.Mensaje = "Ud. no cuenta con los permisos requeridos para ingresar al sistema";
             }
 
-            return Json(retorno, JsonRequestBehavior.AllowGet);
+            return Json(retorno, JsonRequestBehavior.DenyGet);
         }
 
         //

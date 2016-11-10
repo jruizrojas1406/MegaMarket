@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Cibertec.MegaMarket.BL.BE.Categoria>
+
+<li class="active">
+    <a><i class="fa fa-home"></i> Categorías <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu" style="display:block">
+        @foreach (var categoria in Model)
+        {
+            <li>
+                @Html.ActionLink(categoria.Nombre,
+                "Browse", "Store",
+                new { id = categoria.IdCategoria }, null)
+            </li>
+        }
+    </ul>
+</li>
