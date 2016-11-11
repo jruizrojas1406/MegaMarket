@@ -15,6 +15,16 @@ namespace Cibertec.MegaMarket.BL.BC
             return new ProductoDALC().ListarProductos(NombreProducto).ToList();
         }
 
+        public List<Producto> ListarProductosxCategoria(int idCategoria)
+        {
+            return new ProductoDALC().ListarProductosxCategoria(idCategoria).ToList();
+        }
+
+        public Producto ObtenerProductoPorId(int idProducto)
+        {
+            return new ProductoDALC().ObtenerProductoPorId(idProducto);
+        }
+
         public void InsertarProducto(Producto producto)
         {
             new ProductoDALC().InsertarProducto(producto);

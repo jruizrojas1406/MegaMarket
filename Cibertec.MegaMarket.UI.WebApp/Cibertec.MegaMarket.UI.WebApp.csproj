@@ -166,6 +166,7 @@
     </Compile>
     <Compile Include="Helpers\AppSettings.cs" />
     <Compile Include="Helpers\Encriptacion.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Models\Retorno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -236,6 +237,7 @@
     <Content Include="Content\iconos\MegaMarket.png" />
     <Content Include="Content\images\LogoMegaMarket.png" />
     <Content Include="Content\images\logo_white.png" />
+    <Content Include="Content\images\NotFound.png" />
     <Content Include="Content\images\ui-icons_444444_256x240.png" />
     <Content Include="Content\images\ui-icons_555555_256x240.png" />
     <Content Include="Content\images\ui-icons_777620_256x240.png" />
@@ -298,6 +300,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Store\CategoriaMenu.cshtml" />
+    <Content Include="Views\Store\ProductoCategoria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

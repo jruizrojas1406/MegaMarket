@@ -20,12 +20,29 @@ namespace Cibertec.MegaMarket.DL.DALC
                 .Where(s => s.Nombre.Contains(NombreProducto));
         }
 
+        public IQueryable<Producto> ListarProductosxCategoria(int idCategoria)
+        {
+            var bd = new MegaMarketEntities();
+            return bd.Productoes
+                .Include(a => a.Categoria)
+                .Include(b => b.UnidMedida)
+                .Where(s => s.IdCategoria == idCategoria);
+        }
+
+        public Producto ObtenerProductoPorId(int idProducto)
+        {
+            var bd = new MegaMarketEntities();
+            return bd.Productoes
+                .Where(x => x.IdProducto == idProducto)
+                .FirstOrDefault();                  
+        }
+
         public void InsertarProducto(Producto producto)
         {
             using (var db = new MegaMarketEntities())
             {
                 db.Productoes.Add(producto);
-                db.SaveChanges(); 
+                db.SaveChanges();
             }
         }
 
@@ -51,7 +68,7 @@ namespace Cibertec.MegaMarket.DL.DALC
         {
             using (var db = new MegaMarketEntities())
             {
-                var producto =db.Productoes.SingleOrDefault(x => x.IdProducto == CodProducto);
+                var producto = db.Productoes.SingleOrDefault(x => x.IdProducto == CodProducto);
                 db.Productoes.Remove(producto);
                 db.SaveChanges();
             }

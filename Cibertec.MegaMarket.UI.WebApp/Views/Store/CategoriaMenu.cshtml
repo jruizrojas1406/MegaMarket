@@ -7,8 +7,8 @@
         {
             <li>
                 @Html.ActionLink(categoria.Nombre,
-                "Browse", "Store",
-                new { id = categoria.IdCategoria }, null)
+                "ProductoCategoria", "Store",
+                new { idCategoria = categoria.IdCategoria }, null)
             </li>
         }
     </ul>

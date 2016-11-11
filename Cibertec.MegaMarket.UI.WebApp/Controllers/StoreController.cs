@@ -25,6 +25,26 @@ namespace Cibertec.MegaMarket.UI.WebApp.Controllers
             return PartialView(categoria);
         }
 
+        //
+        // GET: /Store/ProductoCategoria/1
+        public ActionResult ProductoCategoria(int idCategoria)
+        {
+            List<Producto> producto = new List<Producto>();
+            producto = new ProductoBC().ListarProductosxCategoria(idCategoria);
+            return View(producto);
+        }
+
+        //
+        // GET: /User/ImagenProducto/<byte>
+        public ActionResult ImagenProducto(int IdProducto)
+        {           
+            Producto producto = new Producto();
+            producto = new ProductoBC().ObtenerProductoPorId(IdProducto);
+            if (producto.Foto == null || producto.Foto.GetType() == typeof(DBNull))
+                return File("~/Content/images/NotFound.png", "image/png");
+            return File(producto.Foto, "image/jpeg");
+        }
+
         // GET: Store/Details/5
         public ActionResult Details(int id)
         {

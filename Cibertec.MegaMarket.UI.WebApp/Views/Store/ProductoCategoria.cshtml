@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Cibertec.MegaMarket.BL.BE.Producto>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="thumbnail">
+                <img src="@Url.Action("ImagenProducto", "Store", new { IdProducto = item.IdProducto })" />
+                <div class="caption">
+                    <h3 class="nombre-producto">@item.Nombre</h3>
+                    <div class="nombre-categoria">@item.Categoria.Nombre</div>
+                    <a href="" class="shopping-cart-button btn pull-right">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+                    <span class="precio-producto">@item.Precio</span>
+                </div>
+            </div>
+        </div>
+    }
+</div>
