@@ -5146,9 +5146,13 @@ ul.notifications {
 .thumbnail .shopping-cart-button {
     border-radius: 50%;
     padding: 7px 10px;
-    background: #0b6292;
+    background: #c5c5c5;
     margin-top: -18px;
 }
+
+    .thumbnail .shopping-cart-button:hover {
+        background: #0b6292;
+    }
 
     .thumbnail .shopping-cart-button i {
         font-size: 15px;
